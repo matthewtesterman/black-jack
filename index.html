@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>My BlackJack</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/bj-style.css">
+</head>
+<body>
+  <div id="score-board" class="container-fluid mt-2 text-white">
+    <div class="row">
+      <div class="col-sm-6 text-center" >
+        <h1 class="turn">
+          You: <span class="badge badge-info pr-2 pl-2" id="player-score"></span>
+        </h1>
+      </div>
+      <div class="col-sm-6 text-center">
+        <h1>
+          Dealer: <span class="badge badge-info" srtlw id="dealer-score"></span>
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p id="dealer-hand" class="text-center">
+    </p>
+    <p id="player-hand" class="text-center" style="margin-top: 50px">
+    </p>
+    <div id="choice" style="display: none;" class="text-center mt-4">
+      <button type="button" id="hitMe" class="btn btn-lg btn-danger"><i class="far fa-hand-rock"></i> Hit Me</button>
+      <button type="button" id="stand" class="btn btn-lg btn-warning"><i class="fas fa-male"></i> Stand</button>
+    </div>
+
+    <div id="loose-modal" class="text-center">
+      <h1 class="message">Too bad! Try again?</h1>
+      <p>
+        <button type="button" class="retry btn btn-lg btn-warning"><i class="fas fa-sync"></i> Try Again</button>
+      </p>
+    </div>
+
+    <div id="winner-modal" class="text-center bg-info text-white">
+      <h1 class="message">You Win!</h1>
+      <p>
+        <button type="button" class=" retry btn btn-lg btn-warning"><i class="fas fa-sync"></i> Go Again</button>
+      </p>
+    </div>
+    <div id="push-modal" class="text-center">
+      <h1 class="message">Tie!</h1>
+      <p>
+        <button type="button" class="retry btn btn-lg btn-info"><i class="fas fa-sync"></i> Go Again</button>
+      </p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="js/card.js"></script>
+    <script src="js/deck.js"></script>
+    <script src="js/hand.js"></script>
+    <script src="js/card-controller.js"></script>
+    <script src="js/gameData.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/score.js"></script>
+    <script src="js/driver.js"></script>
+    <script src="js/view.js"></script>
+    <script>
+    // on start
+    $(function() {
+      var imagePath = "img/"; //path to card images
+      var driver = new Driver();
+      driver.main(imagePath);
+    });
+    </script>
+  </body>
+  </html>
